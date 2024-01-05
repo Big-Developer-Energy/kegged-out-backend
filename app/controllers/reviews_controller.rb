@@ -6,7 +6,11 @@ class ReviewsController < ApplicationController
 
     def create
         review = Review.create(review_params)
-        render json: review
+        if review.valid?
+            render json: review
+        else
+            render json: review.errors, status: 422
+        end
     end
 
     def update
