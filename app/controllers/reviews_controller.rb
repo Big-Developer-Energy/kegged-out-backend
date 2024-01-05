@@ -7,9 +7,9 @@ class ReviewsController < ApplicationController
     def create
         review = Review.create(review_params)
         if review.valid?
-        render json: review
+            render json: review
         else
-        render json: review.errors, status: 422
+            render json: review.errors, status: 422
         end
     end
 
@@ -17,9 +17,9 @@ class ReviewsController < ApplicationController
         review = Review.find(params[:id])
         review.update(review_params)
         if review.valid?
-        render json: review
+            render json: review
         else
-        render json: review.errors, status: 422
+            render json: review.errors, status: 422
         end
     end
 

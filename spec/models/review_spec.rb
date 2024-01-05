@@ -26,4 +26,5 @@ RSpec.describe Review, type: :model do
       review = Review.create(name: 'Stella', rating: 3, description: 'Average', location: 'San Marcos')
       expect(review.errors[:image]).to_not be_empty
     end
+    
 end
