@@ -1,7 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe "Reviews", type: :request do
-  
+
+  let(:user) { User.create(
+    email: 'test@example.com',
+    password: 'password',
+    password_confirmation: 'password'
+  )}
+
   describe "GET /index" do
     it "gets a list of reviews" do
       Review.create(
@@ -9,7 +15,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 4,
         description: 'Sharp, hint of lime',
         location: 'Escondido',
-        image: "image"
+        image: "image",
+        user_id: user.id
       )
 
       get '/reviews'
@@ -28,7 +35,8 @@ RSpec.describe "Reviews", type: :request do
           rating: 4,
           description: 'Sharp, hint of lime',
           location: 'Escondido',
-          image: "image"
+          image: "image",
+          user_id: user.id
         }
       }
   
@@ -50,7 +58,8 @@ RSpec.describe "Reviews", type: :request do
           rating: 4,
           description: 'Sharp, hint of lime',
           location: 'Escondido',
-          image: "image"
+          image: "image",
+          user_id: user.id
         }
       }
   
@@ -66,7 +75,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 4,
         description: 'Sharp, hint of lime',
         location: 'Escondido',
-        image: "image"
+        image: "image",
+        user_id: user.id
         }
       }
 
@@ -88,7 +98,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 4,
         description: 'Sharp, hint of lime',
         location: 'Escondido',
-        image: "image"
+        image: "image",
+        user_id: user.id
     }
   }
       post '/reviews', params: review_params
@@ -108,7 +119,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 3,
         description: 'Average',
         location: 'San Marcos',
-        image: 'image'
+        image: 'image',
+        user_id:1
       }
     }
 
@@ -127,7 +139,8 @@ RSpec.describe "Reviews", type: :request do
         name: 'Stella',
         description: 'Average',
         location: 'San Marcos',
-        image: 'image'
+        image: 'image',
+        user_id: 1
       }
     }
 
@@ -146,7 +159,8 @@ RSpec.describe "Reviews", type: :request do
         name: 'Stella',
         rating: 3,
         location: 'San Marcos',
-        image: 'image'
+        image: 'image',
+        user_id:1
       }
     }
 
@@ -165,7 +179,8 @@ RSpec.describe "Reviews", type: :request do
         name: 'Stella',
         rating: 3,
         description: 'Average',
-        image: 'image'
+        image: 'image',
+        user_id: 1
       }
     }
 
@@ -184,7 +199,8 @@ RSpec.describe "Reviews", type: :request do
         name: 'Stella',
         rating: 3,
         description: 'Average',
-        location: 'San Marcos'
+        location: 'San Marcos',
+        user_id: 1
       }
     }
 
@@ -204,7 +220,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 3,
         description: 'Average',
         location: 'San Marcos',
-        image: 'image'
+        image: 'image',
+        user_id: user.id
       }
     }
 
@@ -217,7 +234,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 3,
         description: 'Average',
         location: 'San Marcos',
-        image: 'image'
+        image: 'image',
+        user_id: user.id
       }
     }
 
@@ -238,7 +256,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 3,
         description: 'Average',
         location: 'San Marcos',
-        image: 'image'
+        image: 'image',
+        user_id: user.id
       }
     }
 
@@ -251,7 +270,8 @@ RSpec.describe "Reviews", type: :request do
         rating: nil,
         description: 'Average',
         location: 'San Marcos',
-        image: 'image'
+        image: 'image',
+        user_id: user.id
       }
     }
 
@@ -272,7 +292,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 3,
         description: 'Average',
         location: 'San Marcos',
-        image: 'image'
+        image: 'image',
+        user_id: user.id
       }
     }
 
@@ -285,7 +306,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 3,
         description: '',
         location: 'San Marcos',
-        image: 'image'
+        image: 'image',
+        user_id: user.id
       }
     }
 
@@ -306,7 +328,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 3,
         description: 'Average',
         location: 'San Marcos',
-        image: 'image'
+        image: 'image',
+        user_id: user.id
       }
     }
 
@@ -319,7 +342,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 3,
         description: 'Average',
         location: '',
-        image: 'image'
+        image: 'image',
+        user_id: user.id
       }
     }
 
@@ -340,7 +364,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 3,
         description: 'Average',
         location: 'San Marcos',
-        image: 'image'
+        image: 'image',
+        user_id: user.id
       }
     }
 
@@ -353,7 +378,8 @@ RSpec.describe "Reviews", type: :request do
         rating: 3,
         description: 'Average',
         location: 'San Marcos',
-        image: ''
+        image: '',
+        user_id: user.id
       }
     }
 
