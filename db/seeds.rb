@@ -4,27 +4,27 @@ user2 = User.where(email: "test2@example.com").first_or_create(password: "passwo
 
 user1_reviews = [
     {
-        name: "IPA",
+        name: "Stone Techno Sours",
         rating: 5,
-        description: "bitter, full, delicious",
-        location: "San Diego",
-        image: "image.png"
+        description: "Tangy with a sweet full flavor",
+        location: "Liberty Station, CA",
+        image: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Belgian_beer_glass.jpg"
     },
     {
-        name: "Amber",
+        name: "Julian Cider Black and Blue",
         rating: 5,
-        description: "Smooth, refreshing",
-        location: "San Diego",
-        image: "image.png"
+        description: "Tart and refreshing",
+        location: "Julian, CA",
+        image: "https://upload.wikimedia.org/wikipedia/en/e/eb/NBA_in_wellington_glass.jpg"
     }
 ]
 user2_reviews = [ 
     {
-        name: "Pilsner",
-        rating: 5,
-        description: "refreshing, crisp, tasty",
-        location: "San Diego",
-        image: "image.png"
+        name: "Stone IPA",
+        rating: 4,
+        description: "Crisp, hoppy and fresh",
+        location: "Escondido, CA",
+        image: "https://live.staticflickr.com/3657/3420765320_89870286b5_b.jpg"
     }
 ]
 
