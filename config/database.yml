@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: kegged_out_backend_production
-  username: kegged_out_backend
-  password: <%= ENV["KEGGED_OUT_BACKEND_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
